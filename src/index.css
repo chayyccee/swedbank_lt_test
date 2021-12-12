@@ -1,5 +1,9 @@
+@import "antd/dist/antd.css";
+
 body {
   margin: 0;
+  box-sizing: border-box;
+  /* background-color: #fbf2ea; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +11,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'DIN Pro';
+  src: url('./Fonts/DINPro.ttf') format('ttf'),
+       url('./Fonts/DINPro.woff') format('woff'),
+       url('./Fonts/DINPro.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('./Fonts/BebasNeue.ttf') format('ttf'),
+       url('./Fonts/BebasNeue.woff') format('woff'),
+       url('./Fonts/BebasNeue.woff2') format('woff2');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DIN Pro';
+}
+
+p {
+  font-family: 'Bebas Neue';
+}
+
+.ant-btn-primary {
+  background-color: #ee7023;
+  border-color: #ee7023;
+}
+
+.ant-btn-primary:hover {
+  background-color: #ee7023;
+  border-color: #ee7023;
+}
+
+.ant-btn-primary:active {
+  background-color: #ee7023;
+  border-color: #ee7023;
+}
+
+.ant-btn-primary::after {
+  background-color: #ee7023;
+  border-color: #ee7023;
+}
+
+.ant-btn-primary:focus {
+  background-color: #ee7023;
+  border-color: #ee7023;
 }

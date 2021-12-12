@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    /*margin: auto;
+    display: flex;
+    flex-direction: column; */
+}
+
+.border {
+    height: 8px;
+    background: linear-gradient(to right, #fa7f25 0, #fdbe13 90%, #fa7f25 100%);
+}

@@ -1,0 +1,32 @@
+.leftformbody-content > h2 {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #0F1624;
+}
+
+.leftformbody-content > p {
+    color: #0F1624;
+    font-size: 21.3px;
+}
+
+.leftformbody-content > h1 {
+    color: #f35b1c;
+    font-weight: bold;
+}
+
+span {
+    list-style: none; /* Remove default bullets */
+    margin: 0;
+    font-size: 16px;
+  }
+
+span > p::before {
+    content: "◗";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #ee7023; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    font-size: 16px;
+}
