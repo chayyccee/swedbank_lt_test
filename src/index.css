@@ -57,3 +57,14 @@ p {
   background-color: #ee7023;
   border-color: #ee7023;
 }
+
+.ant-modal-title {
+  color: #f35b1c;
+  font-family: 'DIN Pro';
+  font-size: 20px;
+}
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+  background: #ee7023;
+  border-color: #ee7023;
+}

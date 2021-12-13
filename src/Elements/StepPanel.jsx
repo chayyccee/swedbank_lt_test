@@ -5,6 +5,7 @@ const StepPanel = (props) => {
   const [activeStep, setActiveStep] = useState(0);
 
   function next() {
+      
     const nextStep = activeStep + 1;
     setActiveStep(nextStep);
   }

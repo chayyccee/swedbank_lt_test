@@ -12,20 +12,21 @@ const LeftFormBody = () => {
 
     const [visible, setVisible] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
-    const [modalText, setModalText] = useState(<StepForm />);
 
     const showModal = () => {
         setVisible(true);
       };
 
     const handleOk = () => {
-        setModalText('The modal will be closed after two seconds');
+        setModalText('Thank You for filling the form. An agent will be in touch shortly');
         setConfirmLoading(true);
         setTimeout(() => {
           setVisible(false);
           setConfirmLoading(false);
         }, 2000);
       };
+
+    const [modalText, setModalText] = useState(<StepForm handleOk={handleOk} />);
 
     const handleCancel = () => {
         console.log('Clicked cancel button');
@@ -70,6 +71,7 @@ const LeftFormBody = () => {
               keyboard={true}
               width={1000}
               centered={true}
+              bodyStyle={{ backgroundColor: 'bisque' }}
             >
               <p>{modalText}</p>
             </Modal>
