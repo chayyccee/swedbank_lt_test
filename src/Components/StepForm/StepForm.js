@@ -370,10 +370,7 @@ const StepForm = ({ handleOk }) => {
         );
       };
 
-      const Step4Form = (fieldsValue) => {
-        const formData = stepForm.getFieldsValue(fieldsValue);
-      
-          
+      const Step4Form = () => {
         return (
           <>
             This is the Summary
