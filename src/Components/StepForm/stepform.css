@@ -5,15 +5,13 @@
 }
 
 .step1_form {
-  /* display: grid;
-   grid-template-columns: repeat(1, 1fr); */
   font-family: 'Nova Flat', 'roboto', monospace;
 }
-
 
 .ant-form-item-label label {
   font-size: large;
 }
+
 .steps-content {
     min-height: 200px;
     margin-top: 16px;
@@ -24,49 +22,21 @@
     border-radius: 2px;
 }
 
-
 .my_step_form_body {
     padding: 1.9rem;
+    background-color: bisque;
 }
 
-/* @media (max-width: 1232px) {
-  .step1_form {
-      grid-template-columns: repeat(3, 1fr);
-}
+.ant-page-header-ghost {
+    background-color: bisque;
 }
 
-@media (max-width: 1016px) {
-  .step1_form {
-      grid-template-columns: repeat(2, 1fr);
-}
-}
-
-@media (max-width: 950px) {
-    .my_step_form_body {
-      padding: 1.5rem;
+@media only screen and (max-width: 990px) {
+    body {
+        background-color: bisque;
     }
 
-    .step1_form {
-      grid-template-columns: 1fr;
-}
-}
-
-@media (max-width: 630px) {
-    .my_step_form_body {
-     padding: 1rem;
-   }
-
-   .step1_form {
-    grid-template-columns: 1fr;
-}
-}
-
-@media (max-width: 500px) {
-    .my_step_form_body {
-      padding: 1rem;
+    .ant-form-item-label > label {
+        display: inline;
     }
-
-    .step1_form {
-      grid-template-columns: 1fr;
-  }
-    } */
+}

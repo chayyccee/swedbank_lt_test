@@ -1,15 +1,23 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Modal } from 'antd';
+
+//Hooks
+import { useMedia } from '../Hooks/ResponsiveHook';
 
 // Components
 import StepForm from '../Components/StepForm/StepForm';
 
-import { Button, Modal } from 'antd';
+// Elements
+import RightFormBody from './RightFormBody';
 
 // Stylesheet
 import './leftformbody.css';
 
+
 const LeftFormBody = () => {
 
+    const desktopDevice = useMedia('(min-width: 960px)');
     const [visible, setVisible] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
 
@@ -36,6 +44,9 @@ const LeftFormBody = () => {
     return (
         <div className="leftformbody-content">
             <h1>Mortgage Loan</h1>
+            {!desktopDevice ? (
+                <RightFormBody />
+            ) : null}
             <h2>There's no place like home</h2>
             <p>Home loan will be a perfect solution if you need a loan for a new home, serious renovation or
                 construction
@@ -53,10 +64,31 @@ const LeftFormBody = () => {
                 </p>
             </span>
             <div className="btn-grp">
-            <Button type='primary' onClick={showModal} size='large'>
+            {!desktopDevice ? (<Link to="/application-form">
+                <Button
+              type='primary'
+              size='large'
+            >
                 Fill in the application
             </Button>
-            <Button style={{ marginLeft: "1rem", color: "white", backgroundColor: "#0F1624"}} size='large'>
+            </Link>) : (<Button
+              type='primary'
+              onClick={desktopDevice && showModal}
+              size='large'
+            >
+                Fill in the application
+            </Button>)}
+            <Button
+              style={{
+                  marginLeft: desktopDevice ? "1rem" : 0,
+                  marginTop: !desktopDevice && "10px",
+                  marginBottom: !desktopDevice && "10px",
+                  color: "white",
+                  backgroundColor: "#0F1624"
+            }}
+            size='large'
+            disabled={true}
+            >
                 Apply as a co-applicant
             </Button>
             </div>

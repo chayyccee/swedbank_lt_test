@@ -1,12 +1,29 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from '../../Elements/AwardsStyles';
+//Hooks
+import { useDesktopMedia } from '../../Hooks/ResponsiveHook';
 
+// Styled Components
+import {
+  CarouselButton,
+  CarouselButtonDot,
+  CarouselButtons,
+  CarouselContainer,
+  CarouselItem,
+  CarouselItemImg,
+  CarouselItemText,
+  CarouselItemTitle,
+  CarouselMobileScrollNode
+} from '../../Elements/AwardsStyles';
+
+// Constants
 import { TimeLineData } from '../../constants/constants';
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
+
+   const desktopDevice = useDesktopMedia();
    const [activeItem, setActiveItem] = useState(0);
    const carouselRef = useRef();
 
@@ -44,7 +61,7 @@ const Timeline = () => {
 
   return (
     <div style={{ background: "#0F1624"}} id="about">
-      <h1 style={{ color: "white" }}>Award</h1>
+      <h1 style={{ color: "white" }}>Awards and Honors</h1>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
         {TimeLineData.map((item, index) => (
@@ -92,7 +109,7 @@ const Timeline = () => {
         </>
       </CarouselContainer>
       <CarouselButtons>
-        {TimeLineData.map((item, index) => (
+        {!desktopDevice && TimeLineData.map((item, index) => (
           <CarouselButton key={index} index={index} active={activeItem} onClick={(e) => handleClick(e, index)} type="button">
             <CarouselButtonDot active={activeItem} />
           </CarouselButton>

@@ -6,3 +6,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 990px) {
+    .content {
+        padding: 0.5rem calc(0.9rem * 2) 0.5rem calc(0.9rem * 2);
+    }
+}

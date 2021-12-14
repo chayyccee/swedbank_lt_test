@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { PageHeader, Form, message, Input, Checkbox, Radio } from "antd";
+
+// Hooks
+import { useDesktopMedia } from "../../Hooks/ResponsiveHook";
 
 // Elements
 import { StepPanel } from "../../Elements/StepPanel";
@@ -9,6 +12,8 @@ import { StepPanel } from "../../Elements/StepPanel";
 import './stepform.css';
 
 const StepForm = ({ handleOk }) => {
+
+    const desktopDevice = useDesktopMedia();
 
     const [stepForm] = Form.useForm();
 
@@ -334,12 +339,11 @@ const StepForm = ({ handleOk }) => {
             </div>
             <div className="step1_form">
             <Form.Item
-              style={{ marginLeft: "100px"}}
+              style={{ marginLeft: desktopDevice ? "100px" : "29px"}}
               name="additionalIncomeSource"
               label="Extra Source of Income?"
             >
               <Checkbox
-                
                 onChange={(e)=> {
                     console.log(`checked = ${e.target.checked}`);
                  }}
@@ -347,10 +351,10 @@ const StepForm = ({ handleOk }) => {
             </Form.Item>
             </div>
             <h3>Existing obligations</h3>
-          <hr style={{ width: "100%", marginBottom: "15px"}} />
+          <hr style={{ width: "100%", marginBottom: !desktopDevice ? "5px" : "15px"}} />
           <div className="step1_form">
             <Form.Item
-              style={{ marginLeft: "100px"}}
+              style={{ marginLeft: desktopDevice ? "100px" : "29px", paddingTop: !desktopDevice && "20px"}}
               name="obligationsOutsideSwedbank"
               label="Do you have obligations outside Swedbank?"
               rules={[

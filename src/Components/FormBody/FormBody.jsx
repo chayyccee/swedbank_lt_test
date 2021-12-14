@@ -1,14 +1,23 @@
+// Hooks
+import { useDesktopMedia } from '../../Hooks/ResponsiveHook';
 
-// Stylesheet
+// Elements
 import LeftFormBody from '../../Elements/LeftFormBody';
 import RightFormBody from '../../Elements/RightFormBody';
+
+// Stylesheet
 import './formbody.css';
 
 const FormBody = () => {
+
+    const desktopDevice = useDesktopMedia();
+
     return (
         <div className="content">
             <LeftFormBody />
-            <RightFormBody />
+            {desktopDevice ? (
+                <RightFormBody />
+            ) : null}
         </div>
     );
 }
