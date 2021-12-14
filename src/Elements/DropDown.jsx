@@ -19,7 +19,7 @@ const menu = (
 const DropDown = () => {
     return (
         <Dropdown overlayStyle={{ width: "160px"}} overlay={menu} trigger={['click']}>
-            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+            <a href="/" className="ant-dropdown-link" onClick={e => e.preventDefault()}>
             <div className="down">
              <p>Private</p>
              <DownOutlined style={{ color: "#ee7023", paddingTop: "9px", marginLeft: "4px", fontSize: "15px" }} />    
