@@ -1,3 +1,5 @@
+import Slide from 'react-reveal/Slide';
+
 // Hooks
 import { useDesktopMedia } from '../../Hooks/ResponsiveHook';
 
@@ -14,9 +16,13 @@ const FormBody = () => {
 
     return (
         <div className="content">
-            <LeftFormBody />
+            <Slide left>
+              <LeftFormBody />
+            </Slide>
             {desktopDevice ? (
-                <RightFormBody />
+                <Slide right>
+                    <RightFormBody />
+                </Slide>
             ) : null}
         </div>
     );

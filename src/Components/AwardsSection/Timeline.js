@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Slide from 'react-reveal/Slide';
 
 //Hooks
 import { useDesktopMedia } from '../../Hooks/ResponsiveHook';
@@ -61,7 +62,7 @@ const Timeline = () => {
 
   return (
     <div style={{ background: "#0F1624"}} id="about">
-      <h1 style={{ color: "white" }}>Awards and Honors</h1>
+      <Slide top><h1 style={{ color: "white" }}>Awards and Honors</h1></Slide>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
         {TimeLineData.map((item, index) => (

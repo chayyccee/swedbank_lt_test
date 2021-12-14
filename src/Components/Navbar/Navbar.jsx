@@ -1,4 +1,5 @@
 import { LoginOutlined } from '@ant-design/icons';
+import Slide from 'react-reveal/Slide';
 
 // Company logo
 import Logo from '../../Static/Logo/swedbank.svg';
@@ -37,11 +38,14 @@ const Navbar = () => {
                 ) : null}
             </div>
             {desktopDevice ? (
-                <div className="div2">
-                    <SearchBar />
-                </div>
+                <Slide top>
+                    <div className="div2">
+                      <SearchBar />
+                    </div>
+                </Slide>
             ) : null}
-            <div className="div3">
+            <Slide top>
+              <div className="div3">
                 {alsoDesktopDevice ? (
                     <div>
                         <p style={{ fontSize: "20px" }} >Become a Customer</p>
@@ -58,7 +62,8 @@ const Navbar = () => {
                  />
                   <p style={{ fontSize: "20px" }} >Log In</p>
                 </div>
-            </div>
+              </div>
+            </Slide>
             </div>
         </div>
     );
